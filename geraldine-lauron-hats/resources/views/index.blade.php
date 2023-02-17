@@ -153,25 +153,21 @@
         @csrf
         <input type="hidden" name="view_hat_id" id="view_hat_id">
         <input type="hidden" name="view_hat_image" id="view_hat_image">
-        <div class="modal-body p-4 bg-light">
-          <div class="my-2">
-            <label for="hat_image">Select Hat Image</label>
-            <input type="file" name="hat_image" class="form-control">
-          </div>
-          <div class="mt-2" id="hat_image">
+        <div class="modal-body p-4 bg-light"> 
+          <div class="mt-2" id="view_hat_image2">
 
           </div>
           <div class="my-2">
-            <label for="hat_name">Hat Name</label>
-            <input type="text" name="hat_name" id="hat_name" class="form-control" placeholder="Hat Name" required>
+            <label for="view_hat_name">Hat Name</label>
+            <input type="text" name="view_hat_name" id="view_hat_name" class="form-control" placeholder="Hat Name" required onfocus="this.blur()">
           </div>
           <div class="my-2">
-            <label for="hat_desc">Hat Description</label>
-            <input type="text" name="hat_desc" id="hat_desc" class="form-control" placeholder="Hat Description" required>
+            <label for="view_hat_desc">Hat Description</label>
+            <input type="text" name="view_hat_desc" id="view_hat_desc" class="form-control" placeholder="Hat Description" required onfocus="this.blur()">
           </div>
           <div class="my-2">
-            <label for="hat_link">Hat Link</label>
-            <input type="text" name="hat_link" id="hat_link" class="form-control" placeholder="Hat Link" required>
+            <label for="view_hat_link">Hat Link</label>
+            <input type="text" name="view_hat_link" id="view_hat_link" class="form-control" placeholder="Hat Link" required onfocus="this.blur()">
           </div>
         </div>
         <div class="modal-footer">
@@ -294,10 +290,10 @@
             _token: '{{ csrf_token() }}'
           },
           success: function(response) {
-            $("#hat_name").val(response.hat_name);
-            $("#hat_desc").val(response.hat_desc);
-            $("#hat_link").val(response.hat_link);
-            $("#hat_image").html(
+            $("#view_hat_name").val(response.hat_name);
+            $("#view_hat_desc").val(response.hat_desc);
+            $("#view_hat_link").val(response.hat_link);
+            $("#view_hat_image2").html(
               `<img src="storage/images/${response.hat_image}" width="100" class="img-fluid img-thumbnail">`);
             $("#view_hat_id").val(response.id);
             $("#view_hat_image").val(response.hat_image);

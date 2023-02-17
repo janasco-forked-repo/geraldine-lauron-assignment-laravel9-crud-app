@@ -20,6 +20,14 @@ class HatController extends Controller
         if ($read_hats->count() > 0) {
             $output .= '<table class="table table-striped table-sm text-center align-middle">
             <thead>
+                <colgroup>
+                   <col span="1" style="width: 5%;">
+                   <col span="1" style="width: 5%;">
+                   <col span="1" style="width: 10%;">
+                   <col span="1" style="width: 45%;">
+                   <col span="1" style="width: 10%;">
+                   <col span="1" style="width: 10%;">
+                </colgroup>
               <tr>
                 <th>ID</th>
                 <th>Image</th>
@@ -39,7 +47,7 @@ class HatController extends Controller
                 <td><a href="' . $read_hat->hat_link . '">Go visit link</a></td>
                 <td>
                   <a href="#" id="' . $read_hat->id . '" class="text-success mx-1 viewIcon" data-bs-toggle="modal" data-bs-target="#viewHatModal"><i class="bi-info-circle h4"></i></a>
-                  
+
                   <a href="#" id="' . $read_hat->id . '" class="text-success mx-1 editIcon" data-bs-toggle="modal" data-bs-target="#editHatModal"><i class="bi-pencil-square h4"></i></a>
 
                   <a href="#" id="' . $read_hat->id . '" class="text-danger mx-1 deleteIcon"><i class="bi-trash h4"></i></a>
